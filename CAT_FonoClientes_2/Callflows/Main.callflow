@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datatypes="http://studio.genesyslab.com/common/datatypes/" xmlns:gvp="http://studio.genesyslab.com/gvp/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http://studio.genesyslab.com/common/datatypes/ http://studio.genesyslab.com/common/#//datatypes">
+  <gvp:CallflowDiagram xmi:id="_xZT6QSyyEd-N8_wa8-CIiw" name="Main" designedUsing="Composer 8.1.440.22">
+    <history>8.1.3</history>
+    <history>8.1.300.01</history>
+    <blocks xmi:type="gvp:EntryBlock" xmi:id="_UXE4YNz8EeKItrUHz40pEQ" name="Entry1" starting="true" category="Entry" scripts="Funciones.js" applicationRoot="../src/ComposerRoot.vxml">
+      <exceptions>connection.disconnect.hangup</exceptions>
+      <exceptions>error</exceptions>
+      <exceptions>all</exceptions>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofQKdLEe2-RPoD6JXeow" name="ANI" value="getANI()" description="ANI associated with the calling party." type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofQadLEe2-RPoD6JXeow" name="APP_ASR_LANGUAGE" value="'en-US'" description="ASR Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofQqdLEe2-RPoD6JXeow" name="APP_LANGUAGE" value="'en-US'" description="Application Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofQ6dLEe2-RPoD6JXeow" name="APP_OPM" value="eval('('+session.connection.protocol.sip.requesturi['parameters']+')')" description="Operational Parameters Data Variable" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofRKdLEe2-RPoD6JXeow" name="CallUUID" value="session.connection.uuid" description="Universal ID" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofRadLEe2-RPoD6JXeow" name="COMPOSER_WSSTUBBING" value="'0'" description="Flag to control WebServices Stubbing. '1' - ON" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofRqdLEe2-RPoD6JXeow" name="CorteLlamada" value="0" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofR6dLEe2-RPoD6JXeow" name="CustomData1" value="''" description="Seleccion del cliente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofSKdLEe2-RPoD6JXeow" name="DNIS" value="getDNIS()" description="DNIS associated with Called phone number" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofSadLEe2-RPoD6JXeow" name="EnableFCR" value="true" description="Flag for enabling Full Call Recording" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofSqdLEe2-RPoD6JXeow" name="EnableReports" value="false" description="Reporting Flag" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofS6dLEe2-RPoD6JXeow" name="EnableSNMP" value="false" description="Flag for enabling SNMP Traps" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofTKdLEe2-RPoD6JXeow" name="GRAMMARFILEDIR" value="'../Resources/Grammars'" description="Grammar File Directory" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofTadLEe2-RPoD6JXeow" name="GVPSessionID" value="session.genesys.userdata[&quot;GVP-Session-ID&quot;]" description="GVP Session ID" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofTqdLEe2-RPoD6JXeow" name="intentoError500" value="0" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofT6dLEe2-RPoD6JXeow" name="LAST_EVENT_ELEMENT" value="'undefined'" description="Element name of the last event" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofUKdLEe2-RPoD6JXeow" name="LAST_EVENT_LINE" value="'undefined'" description="Line number of the last event" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofUadLEe2-RPoD6JXeow" name="LAST_EVENT_MSG" value="'undefined'" description="Last event or error details" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofUqdLEe2-RPoD6JXeow" name="LAST_EVENT_NAME" value="'undefined'" description="Last event or error name" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofU6dLEe2-RPoD6JXeow" name="LAST_EVENT_URL" value="'undefined'" description="URL of the last event." type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofVKdLEe2-RPoD6JXeow" name="LoggerCallflow" value="'Main'" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofVadLEe2-RPoD6JXeow" name="LoggerMensaje" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofVqdLEe2-RPoD6JXeow" name="LoggerNivel" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofV6dLEe2-RPoD6JXeow" name="OCS_Record" value="getCallflowOCSRecord()" description="OCS Record" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofWKdLEe2-RPoD6JXeow" name="OCS_RecordURI" value="getCallflowRecordURI()" description="OCS Record URI" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofWadLEe2-RPoD6JXeow" name="OCS_URI" value="getCallflowOCSURI()" description="OCS URI" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofWqdLEe2-RPoD6JXeow" name="PREV_APP_ASR_LANGUAGE" value="'undefined'" description="Temporary Value of Previous Application Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofW6dLEe2-RPoD6JXeow" name="PREV_APP_LANGUAGE" value="'undefined'" description="Temporary Value of Previous Application Language" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofXKdLEe2-RPoD6JXeow" name="SCRIPTSDIR" value="'../Scripts'" description="JavaScript Directory" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofXadLEe2-RPoD6JXeow" name="USE_LCASE_USERDATAKEY" value="0" description="Flag to control lowerCase lookup in UserData array. 1 - ON" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofXqdLEe2-RPoD6JXeow" name="valorRegularizacion" value="0" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofX6dLEe2-RPoD6JXeow" name="var_access_token" value="''" description="token" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofYKdLEe2-RPoD6JXeow" name="var_ambiente" value="''" description="Ambiente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofYadLEe2-RPoD6JXeow" name="var_APLICACION" value="'Fonoclientes'" description="Aplicacion que se registra en traza" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofYqdLEe2-RPoD6JXeow" name="var_aux" value="0" description="Auxiliar" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofY6dLEe2-RPoD6JXeow" name="var_aux_hora" value="0" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofZKdLEe2-RPoD6JXeow" name="var_aux_min" value="0" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofZadLEe2-RPoD6JXeow" name="var_cerrar_sesion_http" value="''" description="Codigo Http cerrar sesion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofZqdLEe2-RPoD6JXeow" name="var_cerrar_sesion_url" value="''" description="URL cerrar sesion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofZ6dLEe2-RPoD6JXeow" name="var_clave" value="''" description="Clave" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofaKdLEe2-RPoD6JXeow" name="var_cliente" value="''" description="Si es cliente o no" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofaadLEe2-RPoD6JXeow" name="var_connid" value="''" description="ConnId de la llamada" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofaqdLEe2-RPoD6JXeow" name="var_cont_clave_incorrecta" value="0" description="Contador clave incorrecta" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofa6dLEe2-RPoD6JXeow" name="var_cont_m" value="0" description="Contador intentos menu" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofbKdLEe2-RPoD6JXeow" name="var_cont_m2" value="0" description="Contador volver menu anterior opc9" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofbadLEe2-RPoD6JXeow" name="var_cont_rut" value="0" description="Contador intentos ingreso RUT" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofbqdLEe2-RPoD6JXeow" name="var_crear_sesion_dhr1" value="''" description="Header Authorization para crear sesion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofb6dLEe2-RPoD6JXeow" name="var_crear_sesion_dhr2" value="''" description="Header x-cliente-id para crear sesion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofcKdLEe2-RPoD6JXeow" name="var_crear_sesion_http" value="''" description="Http responde code para crear sesion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofcadLEe2-RPoD6JXeow" name="var_crear_sesion_id_sesion" value="''" description="campo salida id-sesion para crear sesion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofcqdLEe2-RPoD6JXeow" name="var_crear_sesion_result" value="''" description="Respuesta  ws crear sesion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofc6dLEe2-RPoD6JXeow" name="var_crear_sesion_url" value="''" description="URL para crear sesion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofdKdLEe2-RPoD6JXeow" name="var_Date" value="''" description="Fecha" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofdadLEe2-RPoD6JXeow" name="var_datos_cliente_castigada" value="''" description="campo castigada de datos cliente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofdqdLEe2-RPoD6JXeow" name="var_datos_cliente_guid" value="''" description="campo salida guid para datos cliente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofd6dLEe2-RPoD6JXeow" name="var_datos_cliente_hdr1" value="''" description="Header Authorization para datos_cliente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofeKdLEe2-RPoD6JXeow" name="var_datos_cliente_http" value="''" description="Http responde code para datos cliente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofeadLEe2-RPoD6JXeow" name="var_datos_cliente_input" value="''" description="Input body JSON datos cliente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofeqdLEe2-RPoD6JXeow" name="var_datos_cliente_result" value="''" description="Respuesta en json de ws datos cliente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofe6dLEe2-RPoD6JXeow" name="var_datos_cliente_result_json_obj" value="''" description="datos cliente result como objeto json" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2offKdLEe2-RPoD6JXeow" name="var_datos_cliente_tipo_tarjeta" value="''" description="campo tipo_tarjeta de datos cliente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2offadLEe2-RPoD6JXeow" name="var_datos_cliente_url" value="''" description="URL para datos_cliente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2offqdLEe2-RPoD6JXeow" name="var_dnis" value="''" description="DNIS numerico 9 digitos" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2off6dLEe2-RPoD6JXeow" name="var_EndPointCerrarSesionCRM" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofgKdLEe2-RPoD6JXeow" name="var_EndPointCrearSesionCRM" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofgadLEe2-RPoD6JXeow" name="var_EndPointDatosCliente" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofgqdLEe2-RPoD6JXeow" name="var_EndPointGetToken" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofg6dLEe2-RPoD6JXeow" name="var_flag_crear_sesion" value="0" description="Para saber si se creo sesion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofhKdLEe2-RPoD6JXeow" name="var_flujo_ivr" value="'fonoclientes'" description="Nombre Aplicacion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofhadLEe2-RPoD6JXeow" name="var_FonoPreferenteDB" value="''" description="Fono desde tabla Preferente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofhqdLEe2-RPoD6JXeow" name="var_FonoVipDB" value="''" description="ANI desde la tabla vip" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofh6dLEe2-RPoD6JXeow" name="var_GetToken_HttpCode" value="''" description="HttpCode de GetToken" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofiKdLEe2-RPoD6JXeow" name="var_GetToken_json" value="''" description="Respuesta JSON de Token" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofiadLEe2-RPoD6JXeow" name="var_GetToken_Token" value="''" description="Token" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofiqdLEe2-RPoD6JXeow" name="var_GetToken_URL" value="''" description="URL para GetToken" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofi6dLEe2-RPoD6JXeow" name="var_HdrLog" value="'[CAT_FonoClientes][' + AppState.ANI + '] '" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofjKdLEe2-RPoD6JXeow" name="var_Hora" value="''" description="Hora" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofjadLEe2-RPoD6JXeow" name="var_inListaNegra" value="0" description="0 no esta en lista negra; 1 esta en lista negra" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofjqdLEe2-RPoD6JXeow" name="var_local" value="'No Identificado'" description="Local de un totem" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofj6dLEe2-RPoD6JXeow" name="var_local_retail_return" value="0" description="Retorno de tx local retail" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofkKdLEe2-RPoD6JXeow" name="var_log_ani" value="AppState.ANI" description="Log campo ANI" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofkadLEe2-RPoD6JXeow" name="var_log_dia" value="''" description="Log campo dia" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofkqdLEe2-RPoD6JXeow" name="var_log_dnis" value="AppState.DNIS" description="Log campo DNIS" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofk6dLEe2-RPoD6JXeow" name="var_log_hora_fin" value="''" description="Log campo hora fin" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2oflKdLEe2-RPoD6JXeow" name="var_log_hora_ini" value="''" description="Log campo hora inicio" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofladLEe2-RPoD6JXeow" name="var_log_navegacion" value="'Inicio'" description="Log campo dia" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2oflqdLEe2-RPoD6JXeow" name="var_log_rut" value="'000000003'" description="Log campo RUT" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofl6dLEe2-RPoD6JXeow" name="var_menu" value="''" description="Seleccion menu" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofmKdLEe2-RPoD6JXeow" name="var_menu0" value="''" description="Seleccion menu miniIVR" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofmadLEe2-RPoD6JXeow" name="var_menu3" value="''" description="Seleccion menu opc 3" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofmqdLEe2-RPoD6JXeow" name="var_mini_ivr" value="''" description="1 es activo, o inactivo" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofm6dLEe2-RPoD6JXeow" name="var_NombrePreferenteDB" value="''" description="Nombre en la tabla Preferente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofnKdLEe2-RPoD6JXeow" name="var_NombreVipDB" value="''" description="Nombre desde la tabla vip" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofnadLEe2-RPoD6JXeow" name="var_out_marca" value="''" description="Marca" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofnqdLEe2-RPoD6JXeow" name="var_preferente" value="''" description="0 si no es preferente; 1 si es preferenta" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofn6dLEe2-RPoD6JXeow" name="var_retail" value="'No Identificado'" description="Retail de un totem" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofoKdLEe2-RPoD6JXeow" name="var_RUT" value="''" description="RUT" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofoadLEe2-RPoD6JXeow" name="var_RUT_dv" value="0" description="Digito verficador del RUT" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofoqdLEe2-RPoD6JXeow" name="var_RUT_num" value="0" description="Rut sin DV" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofo6dLEe2-RPoD6JXeow" name="var_RUT_num_rev" value="0" description="Numero RUT sin dv en reversa" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofpKdLEe2-RPoD6JXeow" name="var_RUT_num_sum" value="0" description="Suma ponderada de los digitos del RUT" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofpadLEe2-RPoD6JXeow" name="var_RUT_num_sum_mod11" value="0" description="Suma modulo 11" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofpqdLEe2-RPoD6JXeow" name="var_status_clave" value="0" description="Status consulta clave 0=nok, 1=ok" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofp6dLEe2-RPoD6JXeow" name="var_Status_OfertableDB" value="''" description="Status consulta Ofertable" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofqKdLEe2-RPoD6JXeow" name="var_StatusListaNegraDB" value="0" description="Cliente en listanegra 0=no esta, 1 si está" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofqadLEe2-RPoD6JXeow" name="var_StatusPreferenteDB" value="0" description="Status consulta Preferente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofqqdLEe2-RPoD6JXeow" name="var_StatusVipDB" value="0" description="Cliente VIP, 0=no es, 1= es" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofq6dLEe2-RPoD6JXeow" name="var_switch_crear_sesion" value="0" description="Para habilitar crear sesion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofrKdLEe2-RPoD6JXeow" name="var_tag_clave" value="''" description="Si el cliente no ingreso clave o clave incorrecta" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofradLEe2-RPoD6JXeow" name="var_tieneCredCons" value="0" description="Si tiene credito consumo = 1 eoc 0" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofrqdLEe2-RPoD6JXeow" name="var_token" value="''" description="Token" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofr6dLEe2-RPoD6JXeow" name="var_token_input" value="''" description="Input en JSON para token" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofsKdLEe2-RPoD6JXeow" name="var_token_result" value="''" description="Respuesta en json de ws token" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofsadLEe2-RPoD6JXeow" name="var_token_result_json_obj" value="''" description="token result como objeto json" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofsqdLEe2-RPoD6JXeow" name="var_token_url" value="''" description="URL para token" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofs6dLEe2-RPoD6JXeow" name="var_TranferVDN" value="''" description="VDN a transferir" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2oftKdLEe2-RPoD6JXeow" name="var_transferir_guid" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2oftadLEe2-RPoD6JXeow" name="var_transferir_idsesion" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2oftqdLEe2-RPoD6JXeow" name="var_transferir_rut" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2oft6dLEe2-RPoD6JXeow" name="var_transferir_token" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofuKdLEe2-RPoD6JXeow" name="var_url_comun" value="''" description="Parte comun de la url" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofuadLEe2-RPoD6JXeow" name="var_vip" value="0" description="0 no ese VIP; 1 es VIP" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofuqdLEe2-RPoD6JXeow" name="varAccion" value="''" description="Accion posterior (corte, transfer=" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofu6dLEe2-RPoD6JXeow" name="varDestino" value="''" description="Grupo a transferir" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofvKdLEe2-RPoD6JXeow" name="varNombre" value="''" description="Nombre Cliente" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofvadLEe2-RPoD6JXeow" name="varOpcion" value="''" description="OpcionSeleccionada" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofvqdLEe2-RPoD6JXeow" name="varPrioridad" value="0" description="Prioridad" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofv6dLEe2-RPoD6JXeow" name="varServicio" value="''" description="Servicio" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofwKdLEe2-RPoD6JXeow" name="VOXFILEDIR" value="'../Resources/Prompts'" description="Audio File Directory" type="System"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofwadLEe2-RPoD6JXeow" name="varHorarioIni" value="undefined" description="Hora Inicio de Atencion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofwqdLEe2-RPoD6JXeow" name="varHorarioFin" value="undefined" description="Hora Fin de Atencion" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofw6dLEe2-RPoD6JXeow" name="varControlHorario" value="undefined" description="Contiene HABIL o NOHABIL dependiendo del retorno de la subrutina" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofxKdLEe2-RPoD6JXeow" name="estado" value="0" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofxadLEe2-RPoD6JXeow" name="var_att_HoraLun" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofxqdLEe2-RPoD6JXeow" name="var_att_HoraMart" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofx6dLEe2-RPoD6JXeow" name="var_att_HoraMierc" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofyKdLEe2-RPoD6JXeow" name="var_att_HoraJuev" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofyadLEe2-RPoD6JXeow" name="var_att_HoraVier" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofyqdLEe2-RPoD6JXeow" name="var_att_HoraSaba" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofy6dLEe2-RPoD6JXeow" name="var_att_HoraDom" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofzKdLEe2-RPoD6JXeow" name="var_att_Opc1" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofzadLEe2-RPoD6JXeow" name="var_att_Opc2" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofzqdLEe2-RPoD6JXeow" name="var_att_Opc3" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2ofz6dLEe2-RPoD6JXeow" name="var_att_Opc4" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of0KdLEe2-RPoD6JXeow" name="var_att_Opc9" value="undefined" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of0adLEe2-RPoD6JXeow" name="var_ConsultaActivos_url" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of0qdLEe2-RPoD6JXeow" name="var_TokenValidaTarjeta_url" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of06dLEe2-RPoD6JXeow" name="var_validaClave_url" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of1KdLEe2-RPoD6JXeow" name="contextoClave" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of1adLEe2-RPoD6JXeow" name="EstadoError" value="0" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of1qdLEe2-RPoD6JXeow" name="var_Facturacion_url" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of16dLEe2-RPoD6JXeow" name="varCliente" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of2KdLEe2-RPoD6JXeow" name="var_url_actualiza_sesion" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of2adLEe2-RPoD6JXeow" name="varURLDymanics" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of2qdLEe2-RPoD6JXeow" name="var_att_WhatsApp_BD" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of26dLEe2-RPoD6JXeow" name="var_att_WhatsApp_EWT" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of3KdLEe2-RPoD6JXeow" name="var_att_WhatsApp_EWT_Valor" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of3adLEe2-RPoD6JXeow" name="var_att_WhatsApp_NLlamadas" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of3qdLEe2-RPoD6JXeow" name="var_att_WhatsApp_NLlamadas_Valor" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of36dLEe2-RPoD6JXeow" name="var_att_var_ewt_mas" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of4KdLEe2-RPoD6JXeow" name="var_att_var_ewt_pref" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of4adLEe2-RPoD6JXeow" name="var_att_WhatsApp_EnviaMensaje" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of4qdLEe2-RPoD6JXeow" name="var_out_marca_mw" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of46dLEe2-RPoD6JXeow" name="var_status_smsWhatsapp" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of5KdLEe2-RPoD6JXeow" name="var_obtiene_smsWhatsapp_URL" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of5adLEe2-RPoD6JXeow" name="var_obtiene_hsmWhatsapp_URL" value="''" description="Enter Description" type="User"/>
+      <variables xmi:type="datatypes:Variable" xmi:id="_x2of5qdLEe2-RPoD6JXeow" name="var_url_ofertaClientes" value="''" description="Enter Description" type="User"/>
+    </blocks>
+    <blocks xmi:type="gvp:ExitBlock" xmi:id="_-2yLZcAzEeivCP8b4PxhkA" name="Exit2" terminating="true" category="Exit" returnMode="false">
+      <loggingDetails>AppState.var_HdrLog + 'varAccion:' + AppState.varAccion + ' varDestino:' + AppState.varDestino + ' varServicio:' + AppState.varServicio + ' varPrioridad:' + AppState.varPrioridad + 'varRUT:' +  AppState.var_RUT + 'var_flujo_ivr: ' + AppState.var_flujo_ivr</loggingDetails>
+      <returnValues>ANI</returnValues>
+      <returnValues>CustomData1</returnValues>
+      <returnValues>var_APLICACION</returnValues>
+      <returnValues>var_connid</returnValues>
+      <returnValues>var_datos_cliente_tipo_tarjeta</returnValues>
+      <returnValues>var_flujo_ivr</returnValues>
+      <returnValues>var_local</returnValues>
+      <returnValues>var_local_retail_return</returnValues>
+      <returnValues>var_retail</returnValues>
+      <returnValues>var_RUT</returnValues>
+      <returnValues>var_transferir_guid</returnValues>
+      <returnValues>var_transferir_idsesion</returnValues>
+      <returnValues>var_transferir_rut</returnValues>
+      <returnValues>var_transferir_token</returnValues>
+      <returnValues>varAccion</returnValues>
+      <returnValues>varDestino</returnValues>
+      <returnValues>varNombre</returnValues>
+      <returnValues>varOpcion</returnValues>
+      <returnValues>varPrioridad</returnValues>
+      <returnValues>varServicio</returnValues>
+      <returnValues>contextoClave</returnValues>
+      <returnValues>varCliente</returnValues>
+      <returnValues>varURLDymanics</returnValues>
+    </blocks>
+    <blocks xmi:type="gvp:AssignBlock" xmi:id="_EVtVMOwFEeiULJsV1RjNOw" name="AccionCortar2" category="Assign">
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_o1Ns4FS4EemiOq0qbUEAMA" Key="varAccion" Value="'cortar'"/>
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_o1Ns4VS4EemiOq0qbUEAMA" Key="CorteLlamada" Value="1"/>
+    </blocks>
+    <blocks xmi:type="gvp:AssignBlock" xmi:id="_2-LuoPGPEeifuO8k3L_2oQ" name="marcaCortaCli" category="Assign">
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_SI8aUPGREeifuO8k3L_2oQ" Key="var_log_navegacion" Value="AppState.var_log_navegacion.concat(',ClienteCorta')"/>
+    </blocks>
+    <blocks xmi:type="gvp:AssignBlock" xmi:id="_3i0swPGPEeifuO8k3L_2oQ" name="marcaErr" category="Assign">
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_TzvIMPGREeifuO8k3L_2oQ" Key="var_log_navegacion" Value="AppState.var_log_navegacion.concat(',Error')"/>
+    </blocks>
+    <blocks xmi:type="gvp:AssignBlock" xmi:id="_4KH9UPGPEeifuO8k3L_2oQ" name="marcaAll" category="Assign">
+      <assignData xmi:type="datatypes:KeyValuePairItem" xmi:id="_VYMkkPGREeifuO8k3L_2oQ" Key="var_log_navegacion" Value="AppState.var_log_navegacion.concat(',All')"/>
+    </blocks>
+    <blocks xmi:type="gvp:BackendBlock" xmi:id="_UXDbRFAFEemI77Q9dXX9Qw" name="LogClienteCorta" category="Backend" uri="../src/Logger.jsp">
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_bdsGwFAFEemI77Q9dXX9Qw" name="LoggerMensaje" value="AppState.var_HdrLog + ' Cliente corta la llamada'" description="Mensaje a escribir"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_bdsGwVAFEemI77Q9dXX9Qw" name="LoggerNivel" value="'Error'" description="Nivel del Log"/>
+    </blocks>
+    <blocks xmi:type="gvp:BackendBlock" xmi:id="_eXrLoFAFEemI77Q9dXX9Qw" name="LogFlujoError" category="Backend" uri="../src/Logger.jsp">
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_toAiIFAFEemI77Q9dXX9Qw" name="LoggerMensaje" value="AppState.var_HdrLog + ' Error de Flujo Err'" description="Mensaje a escribir"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_toAiIVAFEemI77Q9dXX9Qw" name="LoggerNivel" value="'Error'" description="Nivel del Log"/>
+    </blocks>
+    <blocks xmi:type="gvp:BackendBlock" xmi:id="_fc2rAFAFEemI77Q9dXX9Qw" name="LogFlujoAll" category="Backend" uri="../src/Logger.jsp">
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_mhekUFAFEemI77Q9dXX9Qw" name="LoggerMensaje" value="AppState.var_HdrLog + ' Error de Flujo All'" description="Mensaje a escribir"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_mhekUVAFEemI77Q9dXX9Qw" name="LoggerNivel" value="'Error'" description="Nivel del Log"/>
+    </blocks>
+    <blocks xmi:type="gvp:BranchingBlock" xmi:id="_9MK5wK8fEeme-ea6aSDxww" name="ValidaEstadoBienvenida" category="Branching">
+      <conditions xmi:type="datatypes:BranchItem" xmi:id="_MjpVcHfTEeqFyphqKj_-KA" name="Salida" expression="AppState.estado == 1"/>
+      <conditions xmi:type="datatypes:BranchItem" xmi:id="_MjpVcXfTEeqFyphqKj_-KA" name="Error" expression="AppState.EstadoError == 1"/>
+    </blocks>
+    <blocks xmi:type="gvp:SubdialogBlock" xmi:id="_93STgL3qEemr4rmPuG1vgQ" name="SD_Bienvenida" category="Subdialog" uri="workspace:///CAT_FonoClientes_2/Callflows/SBC_Bienvenida.callflow">
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9QKdLEe2-RPoD6JXeow" name="EstadoError" value="EstadoError" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9QadLEe2-RPoD6JXeow" name="estado" value="estado" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9QqdLEe2-RPoD6JXeow" name="varAccion" value="varAccion" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9Q6dLEe2-RPoD6JXeow" name="var_ConsultaActivos_url" value="var_ConsultaActivos_url" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9RKdLEe2-RPoD6JXeow" name="var_EndPointCerrarSesionCRM" value="var_EndPointCerrarSesionCRM" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9RadLEe2-RPoD6JXeow" name="var_EndPointDatosCliente" value="var_EndPointDatosCliente" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9RqdLEe2-RPoD6JXeow" name="var_Facturacion_url" value="var_Facturacion_url" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9R6dLEe2-RPoD6JXeow" name="var_GetToken_URL" value="var_GetToken_URL" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9SKdLEe2-RPoD6JXeow" name="var_HdrLog" value="AppState.var_HdrLog" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9SadLEe2-RPoD6JXeow" name="var_Hora" value="var_Hora" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9SqdLEe2-RPoD6JXeow" name="var_TokenValidaTarjeta_url" value="var_TokenValidaTarjeta_url" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9S6dLEe2-RPoD6JXeow" name="var_att_HoraDom" value="var_att_HoraDom" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9TKdLEe2-RPoD6JXeow" name="var_att_HoraJuev" value="var_att_HoraJuev" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9TadLEe2-RPoD6JXeow" name="var_att_HoraLun" value="var_att_HoraLun" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9TqdLEe2-RPoD6JXeow" name="var_att_HoraMart" value="var_att_HoraMart" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9T6dLEe2-RPoD6JXeow" name="var_att_HoraMierc" value="var_att_HoraMierc" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9UKdLEe2-RPoD6JXeow" name="var_att_HoraSaba" value="var_att_HoraSaba" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9UadLEe2-RPoD6JXeow" name="var_att_HoraVier" value="var_att_HoraVier" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9UqdLEe2-RPoD6JXeow" name="var_att_Opc1" value="var_att_Opc1" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9U6dLEe2-RPoD6JXeow" name="var_att_Opc2" value="var_att_Opc2" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9VKdLEe2-RPoD6JXeow" name="var_att_Opc3" value="var_att_Opc3" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9VadLEe2-RPoD6JXeow" name="var_att_Opc4" value="var_att_Opc4" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9VqdLEe2-RPoD6JXeow" name="var_att_Opc9" value="var_att_Opc9" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9V6dLEe2-RPoD6JXeow" name="var_att_WhatsApp_BD" value="var_att_WhatsApp_BD" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9WKdLEe2-RPoD6JXeow" name="var_att_WhatsApp_EWT" value="var_att_WhatsApp_EWT" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9WadLEe2-RPoD6JXeow" name="var_att_WhatsApp_EWT_Valor" value="var_att_WhatsApp_EWT_Valor" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9WqdLEe2-RPoD6JXeow" name="var_att_WhatsApp_EnviaMensaje" value="var_att_WhatsApp_EnviaMensaje" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9W6dLEe2-RPoD6JXeow" name="var_att_WhatsApp_NLlamadas" value="var_att_WhatsApp_NLlamadas" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9XKdLEe2-RPoD6JXeow" name="var_att_WhatsApp_NLlamadas_Valor" value="var_att_WhatsApp_NLlamadas_Valor" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9XadLEe2-RPoD6JXeow" name="var_att_var_ewt_mas" value="var_att_var_ewt_mas" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9XqdLEe2-RPoD6JXeow" name="var_att_var_ewt_pref" value="var_att_var_ewt_pref" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9X6dLEe2-RPoD6JXeow" name="var_connid" value="var_connid" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9YKdLEe2-RPoD6JXeow" name="var_crear_sesion_url" value="var_crear_sesion_url" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9YadLEe2-RPoD6JXeow" name="var_dnis" value="var_dnis" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9YqdLEe2-RPoD6JXeow" name="var_local" value="var_local" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9Y6dLEe2-RPoD6JXeow" name="var_log_hora_ini" value="var_log_hora_ini" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9ZKdLEe2-RPoD6JXeow" name="var_log_navegacion" value="var_log_navegacion" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9ZadLEe2-RPoD6JXeow" name="var_obtiene_hsmWhatsapp_URL" value="var_obtiene_hsmWhatsapp_URL" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9ZqdLEe2-RPoD6JXeow" name="var_obtiene_smsWhatsapp_URL" value="var_obtiene_smsWhatsapp_URL" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9Z6dLEe2-RPoD6JXeow" name="var_retail" value="var_retail" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9aKdLEe2-RPoD6JXeow" name="var_switch_crear_sesion" value="var_switch_crear_sesion" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9aadLEe2-RPoD6JXeow" name="var_url_actualiza_sesion" value="var_url_actualiza_sesion" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9aqdLEe2-RPoD6JXeow" name="var_url_ofertaClientes" value="var_url_ofertaClientes" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_nUf9a6dLEe2-RPoD6JXeow" name="var_validaClave_url" value="var_validaClave_url" description="Enter Description" type="output"/>
+      <fetchAudio xmi:type="datatypes:MultiSourceProperty" xmi:id="_KLwGcFqGEeqaPfUVMDpiWw" value=""/>
+    </blocks>
+    <blocks xmi:type="gvp:SubdialogBlock" xmi:id="_UxkmhcLkEem3x40cDcgaYw" name="SD_Salida" category="Subdialog" uri="workspace:///CAT_FonoClientes_2/Callflows/SBC_Salida.callflow">
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8MGBjEe29o_u1UcknOg" name="CorteLlamada" value="AppState.CorteLlamada" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8MWBjEe29o_u1UcknOg" name="CustomData1" value="AppState.CustomData1" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8MmBjEe29o_u1UcknOg" name="contextoClave" value="AppState.contextoClave" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8M2BjEe29o_u1UcknOg" name="varOpcion" value="AppState.varOpcion" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8NGBjEe29o_u1UcknOg" name="varServicio" value="AppState.varServicio" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8NWBjEe29o_u1UcknOg" name="varURLDymanics" value="varURLDymanics" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8NmBjEe29o_u1UcknOg" name="var_EndPointCerrarSesionCRM" value="AppState.var_EndPointCerrarSesionCRM" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8N2BjEe29o_u1UcknOg" name="var_GetToken_Token" value="AppState.var_GetToken_Token" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8OGBjEe29o_u1UcknOg" name="var_HdrLog" value="AppState.var_HdrLog" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8OWBjEe29o_u1UcknOg" name="var_RUT" value="AppState.var_RUT" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8OmBjEe29o_u1UcknOg" name="var_connid" value="AppState.var_connid" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8O2BjEe29o_u1UcknOg" name="var_crear_sesion_id_sesion" value="AppState.var_crear_sesion_id_sesion" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8PGBjEe29o_u1UcknOg" name="var_crear_sesion_result" value="AppState.var_crear_sesion_result" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8PWBjEe29o_u1UcknOg" name="var_datos_cliente_guid" value="AppState.var_datos_cliente_guid" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8PmBjEe29o_u1UcknOg" name="var_dnis" value="AppState.var_dnis" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8P2BjEe29o_u1UcknOg" name="var_flag_crear_sesion" value="AppState.var_flag_crear_sesion" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8QGBjEe29o_u1UcknOg" name="var_local" value="AppState.var_local" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8QWBjEe29o_u1UcknOg" name="var_log_hora_ini" value="AppState.var_log_hora_ini" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8QmBjEe29o_u1UcknOg" name="var_log_navegacion" value="AppState.var_log_navegacion" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8Q2BjEe29o_u1UcknOg" name="var_retail" value="AppState.var_retail" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8RGBjEe29o_u1UcknOg" name="var_transferir_guid" value="AppState.var_transferir_guid" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8RWBjEe29o_u1UcknOg" name="var_transferir_idsesion" value="AppState.var_transferir_idsesion" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8RmBjEe29o_u1UcknOg" name="var_transferir_rut" value="AppState.var_transferir_rut" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_b_C8R2BjEe29o_u1UcknOg" name="var_transferir_token" value="AppState.var_transferir_token" description="Enter Description"/>
+    </blocks>
+    <blocks xmi:type="gvp:BackendBlock" xmi:id="_7LCMYMM_Eem3x40cDcgaYw" name="BKND_EstadoBienvenida" category="Backend" uri="../src/Logger.jsp">
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_GzsRkMNAEem3x40cDcgaYw" name="LoggerMensaje" value="AppState.var_HdrLog + ' Estado bienvenida: ' + AppState.estado" description="Mensaje a escribir"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_GzsRkcNAEem3x40cDcgaYw" name="LoggerNivel" value="'Info'" description="Nivel del Log"/>
+    </blocks>
+    <blocks xmi:type="gvp:SubdialogBlock" xmi:id="_lYl28MNDEem3x40cDcgaYw" name="SD_Procesos" category="Subdialog" uri="workspace:///CAT_FonoClientes_2/Callflows/SBC_Procesos.callflow">
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SUKdMEe2-RPoD6JXeow" name="CorteLlamada" value="CorteLlamada" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SUadMEe2-RPoD6JXeow" name="CustomData1" value="CustomData1" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SUqdMEe2-RPoD6JXeow" name="EstadoError" value="EstadoError" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SU6dMEe2-RPoD6JXeow" name="contextoClave" value="contextoClave" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SVKdMEe2-RPoD6JXeow" name="estado" value="estado" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SVadMEe2-RPoD6JXeow" name="varAccion" value="varAccion" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SVqdMEe2-RPoD6JXeow" name="varCliente" value="varCliente" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SV6dMEe2-RPoD6JXeow" name="varDestino" value="varDestino" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SWKdMEe2-RPoD6JXeow" name="varNombre" value="varNombre" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SWadMEe2-RPoD6JXeow" name="varOpcion" value="varOpcion" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SWqdMEe2-RPoD6JXeow" name="varServicio" value="varServicio" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SW6dMEe2-RPoD6JXeow" name="var_APLICACION" value="AppState.var_APLICACION" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SXKdMEe2-RPoD6JXeow" name="var_ConsultaActivos_url" value="AppState.var_ConsultaActivos_url" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SXadMEe2-RPoD6JXeow" name="var_EndPointCerrarSesionCRM" value="AppState.var_EndPointCerrarSesionCRM" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SXqdMEe2-RPoD6JXeow" name="var_EndPointDatosCliente" value="AppState.var_EndPointDatosCliente" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SX6dMEe2-RPoD6JXeow" name="var_Facturacion_url" value="AppState.var_Facturacion_url" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SYKdMEe2-RPoD6JXeow" name="var_GetToken_Token" value="var_transferir_token" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SYadMEe2-RPoD6JXeow" name="var_GetToken_URL" value="AppState.var_GetToken_URL" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SYqdMEe2-RPoD6JXeow" name="var_HdrLog" value="AppState.var_HdrLog" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SY6dMEe2-RPoD6JXeow" name="var_Hora" value="AppState.var_Hora" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SZKdMEe2-RPoD6JXeow" name="var_RUT" value="var_RUT" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SZadMEe2-RPoD6JXeow" name="var_TokenValidaTarjeta_url" value="AppState.var_TokenValidaTarjeta_url" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SZqdMEe2-RPoD6JXeow" name="var_att_HoraDom" value="AppState.var_att_HoraDom" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SZ6dMEe2-RPoD6JXeow" name="var_att_HoraJue" value="AppState.var_att_HoraJuev" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SaKdMEe2-RPoD6JXeow" name="var_att_HoraLun" value="AppState.var_att_HoraLun" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SaadMEe2-RPoD6JXeow" name="var_att_HoraMart" value="AppState.var_att_HoraMart" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SaqdMEe2-RPoD6JXeow" name="var_att_HoraMierc" value="AppState.var_att_HoraMierc" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-Sa6dMEe2-RPoD6JXeow" name="var_att_HoraSaba" value="AppState.var_att_HoraSaba" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SbKdMEe2-RPoD6JXeow" name="var_att_HoraVier" value="AppState.var_att_HoraVier" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SbadMEe2-RPoD6JXeow" name="var_att_Opc1" value="AppState.var_att_Opc1" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SbqdMEe2-RPoD6JXeow" name="var_att_Opc2" value="AppState.var_att_Opc2" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-Sb6dMEe2-RPoD6JXeow" name="var_att_Opc3" value="AppState.var_att_Opc3" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-ScKdMEe2-RPoD6JXeow" name="var_att_Opc4" value="AppState.var_att_Opc4" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-ScadMEe2-RPoD6JXeow" name="var_att_Opc9" value="AppState.var_att_Opc9" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-ScqdMEe2-RPoD6JXeow" name="var_att_WhatsApp_BD" value="AppState.var_att_WhatsApp_BD" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-Sc6dMEe2-RPoD6JXeow" name="var_att_WhatsApp_EWT" value="AppState.var_att_WhatsApp_EWT" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SdKdMEe2-RPoD6JXeow" name="var_att_WhatsApp_EWT_Valor" value="AppState.var_att_WhatsApp_EWT_Valor" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SdadMEe2-RPoD6JXeow" name="var_att_WhatsApp_EnviaMensaje" value="AppState.var_att_WhatsApp_EnviaMensaje" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SdqdMEe2-RPoD6JXeow" name="var_att_WhatsApp_NLlamadas" value="AppState.var_att_WhatsApp_NLlamadas" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-Sd6dMEe2-RPoD6JXeow" name="var_att_WhatsApp_NLlamadas_Valor" value="AppState.var_att_WhatsApp_NLlamadas_Valor" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SeKdMEe2-RPoD6JXeow" name="var_att_var_ewt_mas" value="0" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SeadMEe2-RPoD6JXeow" name="var_att_var_ewt_pref" value="0" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SeqdMEe2-RPoD6JXeow" name="var_connid" value="AppState.var_connid" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-Se6dMEe2-RPoD6JXeow" name="var_crear_sesion_id_sesion" value="var_transferir_idsesion" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SfKdMEe2-RPoD6JXeow" name="var_crear_sesion_url" value="AppState.var_crear_sesion_url" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SfadMEe2-RPoD6JXeow" name="var_datos_cliente_guid" value="var_transferir_guid" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SfqdMEe2-RPoD6JXeow" name="var_dnis" value="AppState.var_dnis" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-Sf6dMEe2-RPoD6JXeow" name="var_flag_crear_sesion" value="var_flag_crear_sesion" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SgKdMEe2-RPoD6JXeow" name="var_log_navegacion" value="var_log_navegacion" description="Enter Description" type="inout"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SgadMEe2-RPoD6JXeow" name="var_obtiene_hsmWhatsapp_URL" value="AppState.var_obtiene_smsWhatsapp_URL" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SgqdMEe2-RPoD6JXeow" name="var_obtiene_smsWhatsapp_URL" value="AppState.var_obtiene_hsmWhatsapp_URL" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-Sg6dMEe2-RPoD6JXeow" name="var_out_marca_mw" value="var_out_marca" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-ShKdMEe2-RPoD6JXeow" name="var_status_smsWhatsapp" value="var_out_marca_mw" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-ShadMEe2-RPoD6JXeow" name="var_switch_crear_sesion" value="AppState.var_switch_crear_sesion" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-ShqdMEe2-RPoD6JXeow" name="var_transferir_rut" value="var_transferir_rut" description="Enter Description" type="output"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-Sh6dMEe2-RPoD6JXeow" name="var_url_actualiza_sesion" value="AppState.var_url_actualiza_sesion" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SiKdMEe2-RPoD6JXeow" name="var_url_ofertaClientes" value="AppState.var_url_ofertaClientes" description="Enter Description"/>
+      <parameters xmi:type="datatypes:Parameter" xmi:id="_KS-SiadMEe2-RPoD6JXeow" name="var_validaClave_url" value="AppState.var_validaClave_url" description="Enter Description"/>
+    </blocks>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_ucSK4Ne4EeiqcaqkZOicjQ" fromBlock="_UXE4YNz8EeKItrUHz40pEQ" toBlock="_93STgL3qEemr4rmPuG1vgQ"/>
+    <links xmi:type="gvp:CallflowExceptionLink" xmi:id="_DCaAsOjYEeiGgsuPrl-7dQ" name="connection.disconnect.hangup" fromBlock="_UXE4YNz8EeKItrUHz40pEQ" toBlock="_UXDbRFAFEemI77Q9dXX9Qw"/>
+    <links xmi:type="gvp:CallflowExceptionLink" xmi:id="_ATBXYOjaEeiGgsuPrl-7dQ" name="all" fromBlock="_UXE4YNz8EeKItrUHz40pEQ" toBlock="_fc2rAFAFEemI77Q9dXX9Qw"/>
+    <links xmi:type="gvp:CallflowExceptionLink" xmi:id="_EavasOjaEeiGgsuPrl-7dQ" name="error" fromBlock="_UXE4YNz8EeKItrUHz40pEQ" toBlock="_eXrLoFAFEemI77Q9dXX9Qw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_WZamcPGQEeifuO8k3L_2oQ" fromBlock="_2-LuoPGPEeifuO8k3L_2oQ" toBlock="_EVtVMOwFEeiULJsV1RjNOw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_Wr8g4PGQEeifuO8k3L_2oQ" fromBlock="_3i0swPGPEeifuO8k3L_2oQ" toBlock="_EVtVMOwFEeiULJsV1RjNOw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_XKe3APGQEeifuO8k3L_2oQ" fromBlock="_4KH9UPGPEeifuO8k3L_2oQ" toBlock="_EVtVMOwFEeiULJsV1RjNOw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_cf-DIFAFEemI77Q9dXX9Qw" fromBlock="_UXDbRFAFEemI77Q9dXX9Qw" toBlock="_2-LuoPGPEeifuO8k3L_2oQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_uroiUFAFEemI77Q9dXX9Qw" fromBlock="_eXrLoFAFEemI77Q9dXX9Qw" toBlock="_3i0swPGPEeifuO8k3L_2oQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_veKLcFAFEemI77Q9dXX9Qw" fromBlock="_fc2rAFAFEemI77Q9dXX9Qw" toBlock="_4KH9UPGPEeifuO8k3L_2oQ"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_fBKwgL7SEemr4rmPuG1vgQ" fromBlock="_93STgL3qEemr4rmPuG1vgQ" toBlock="_7LCMYMM_Eem3x40cDcgaYw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_WKb24MLkEem3x40cDcgaYw" name="Salida" fromBlock="_9MK5wK8fEeme-ea6aSDxww" toBlock="_UxkmhcLkEem3x40cDcgaYw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_hGXY8MLkEem3x40cDcgaYw" fromBlock="_EVtVMOwFEeiULJsV1RjNOw" toBlock="_UxkmhcLkEem3x40cDcgaYw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_OTLYAMLqEem3x40cDcgaYw" fromBlock="_UxkmhcLkEem3x40cDcgaYw" toBlock="_-2yLZcAzEeivCP8b4PxhkA"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_8qDvIMM_Eem3x40cDcgaYw" fromBlock="_7LCMYMM_Eem3x40cDcgaYw" toBlock="_9MK5wK8fEeme-ea6aSDxww"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_l-XdgMNDEem3x40cDcgaYw" name="default" fromBlock="_9MK5wK8fEeme-ea6aSDxww" toBlock="_lYl28MNDEem3x40cDcgaYw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_mNLVkMNDEem3x40cDcgaYw" fromBlock="_lYl28MNDEem3x40cDcgaYw" toBlock="_UxkmhcLkEem3x40cDcgaYw"/>
+    <links xmi:type="gvp:CallflowOutputLink" xmi:id="_NxtEAHfTEeqFyphqKj_-KA" name="Error" fromBlock="_9MK5wK8fEeme-ea6aSDxww" toBlock="_EVtVMOwFEeiULJsV1RjNOw"/>
+    <namespaces xmi:type="datatypes:Property" xmi:id="_Pc6EcNz8EeKItrUHz40pEQ" name="gvp" value="http://www.genesyslab.com/2006/vxml21-extension"/>
+    <systemProperties xmi:type="datatypes:Property" xmi:id="_Pc6Ecdz8EeKItrUHz40pEQ" name="RetainInputTypeVariableDefaultValue" value="false"/>
+  </gvp:CallflowDiagram>
+  <notation:Diagram xmi:id="_xZncQCyyEd-N8_wa8-CIiw" type="Studio" element="_xZT6QSyyEd-N8_wa8-CIiw" name="Main.callflow" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_UX6l4Nz8EeKItrUHz40pEQ" type="1003" element="_UXE4YNz8EeKItrUHz40pEQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_UX7M8Nz8EeKItrUHz40pEQ" type="6003"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_UX7M8dz8EeKItrUHz40pEQ" type="6001"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UX6l4dz8EeKItrUHz40pEQ" x="170" y="-42"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_-2yLYcAzEeivCP8b4PxhkA" type="1004" element="_-2yLZcAzEeivCP8b4PxhkA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_-2yLYsAzEeivCP8b4PxhkA" type="6002"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_-2yLY8AzEeivCP8b4PxhkA" type="4005"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-2yLZMAzEeivCP8b4PxhkA" x="84" y="588"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_EVq48OwFEeiULJsV1RjNOw" type="1011" element="_EVtVMOwFEeiULJsV1RjNOw" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_EVq48ewFEeiULJsV1RjNOw" type="4018"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_EVq48uwFEeiULJsV1RjNOw" type="4019"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EVq48-wFEeiULJsV1RjNOw" x="-204" y="336"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_2-J5cPGPEeifuO8k3L_2oQ" type="1011" element="_2-LuoPGPEeifuO8k3L_2oQ" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_2-J5cfGPEeifuO8k3L_2oQ" type="4018"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_2-J5cvGPEeifuO8k3L_2oQ" type="4019"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2-J5c_GPEeifuO8k3L_2oQ" x="-347" y="204" height="35"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_3i0FsPGPEeifuO8k3L_2oQ" type="1011" element="_3i0swPGPEeifuO8k3L_2oQ" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_3i0FsfGPEeifuO8k3L_2oQ" type="4018"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_3i0FsvGPEeifuO8k3L_2oQ" type="4019"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3i0Fs_GPEeifuO8k3L_2oQ" x="-204" y="204" height="35"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_4KHWQPGPEeifuO8k3L_2oQ" type="1011" element="_4KH9UPGPEeifuO8k3L_2oQ" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_4KHWQfGPEeifuO8k3L_2oQ" type="4018"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_4KHWQvGPEeifuO8k3L_2oQ" type="4019"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4KHWQ_GPEeifuO8k3L_2oQ" x="-68" y="204" height="35"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_UXDbQFAFEemI77Q9dXX9Qw" type="1016" element="_UXDbRFAFEemI77Q9dXX9Qw" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_UXDbQVAFEemI77Q9dXX9Qw" type="4028"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_UXDbQlAFEemI77Q9dXX9Qw" type="4029"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UXDbQ1AFEemI77Q9dXX9Qw" x="-347" y="84"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_eXqkkFAFEemI77Q9dXX9Qw" type="1016" element="_eXrLoFAFEemI77Q9dXX9Qw" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_eXqkkVAFEemI77Q9dXX9Qw" type="4028"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_eXqkklAFEemI77Q9dXX9Qw" type="4029"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eXqkk1AFEemI77Q9dXX9Qw" x="-204" y="84"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_fc2D8FAFEemI77Q9dXX9Qw" type="1016" element="_fc2rAFAFEemI77Q9dXX9Qw" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_fc2D8VAFEemI77Q9dXX9Qw" type="4028"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_fc2D8lAFEemI77Q9dXX9Qw" type="4029"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fc2D81AFEemI77Q9dXX9Qw" x="-68" y="84"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_9MNWAK8fEeme-ea6aSDxww" type="1012" element="_9MK5wK8fEeme-ea6aSDxww" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_9MOkIK8fEeme-ea6aSDxww" type="4020"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_9MOkIa8fEeme-ea6aSDxww" type="4021"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9MN9EK8fEeme-ea6aSDxww" x="168" y="252"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_935XgL3qEemr4rmPuG1vgQ" type="1009" element="_93STgL3qEemr4rmPuG1vgQ" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_936loL3qEemr4rmPuG1vgQ" type="4014"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_936lob3qEemr4rmPuG1vgQ" type="4015"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_935-kL3qEemr4rmPuG1vgQ" x="170" y="42"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_UxkmgcLkEem3x40cDcgaYw" type="1009" element="_UxkmhcLkEem3x40cDcgaYw" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_UxkmgsLkEem3x40cDcgaYw" type="4014"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Uxkmg8LkEem3x40cDcgaYw" type="4015"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UxkmhMLkEem3x40cDcgaYw" x="84" y="504"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_7LBlUMM_Eem3x40cDcgaYw" type="1016" element="_7LCMYMM_Eem3x40cDcgaYw" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_7LBlUcM_Eem3x40cDcgaYw" type="4028"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_7LBlUsM_Eem3x40cDcgaYw" type="4029"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7LBlU8M_Eem3x40cDcgaYw" x="140" y="155" width="169"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_lYlP4MNDEem3x40cDcgaYw" type="1009" element="_lYl28MNDEem3x40cDcgaYw" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_lYlP4cNDEem3x40cDcgaYw" type="4014"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_lYlP4sNDEem3x40cDcgaYw" type="4015"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lYlP48NDEem3x40cDcgaYw" x="336" y="378"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_xZncQSyyEd-N8_wa8-CIiw"/>
+    <edges xmi:type="notation:Connector" xmi:id="_ucSK4de4EeiqcaqkZOicjQ" type="3001" element="_ucSK4Ne4EeiqcaqkZOicjQ" source="_UX6l4Nz8EeKItrUHz40pEQ" target="_935XgL3qEemr4rmPuG1vgQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ucSK5Ne4EeiqcaqkZOicjQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ucSK5de4EeiqcaqkZOicjQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_ucSK4te4EeiqcaqkZOicjQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ucSK49e4EeiqcaqkZOicjQ" points="[35, -22, -455, 275]$[484, -272, -6, 25]"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_DCaAsejYEeiGgsuPrl-7dQ" type="3002" element="_DCaAsOjYEeiGgsuPrl-7dQ" source="_UX6l4Nz8EeKItrUHz40pEQ" target="_UXDbQFAFEemI77Q9dXX9Qw">
+      <children xmi:type="notation:DecorationNode" xmi:id="_DCaAtejYEeiGgsuPrl-7dQ" type="4075">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_DCaAtujYEeiGgsuPrl-7dQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:RoutingStyle" xmi:id="_DCaAsujYEeiGgsuPrl-7dQ" roundedBendpointsRadius="10" routing="Rectilinear"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_DCaAs-jYEeiGgsuPrl-7dQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DCaAtOjYEeiGgsuPrl-7dQ" points="[-55, -13, 462, -183]$[-517, -13, 0, -183]$[-517, 145, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DCjxsOjYEeiGgsuPrl-7dQ" id="(0.01818181818181818,0.24)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_ATLIYOjaEeiGgsuPrl-7dQ" type="3002" element="_ATBXYOjaEeiGgsuPrl-7dQ" source="_UX6l4Nz8EeKItrUHz40pEQ" target="_fc2D8FAFEemI77Q9dXX9Qw">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ATLIZOjaEeiGgsuPrl-7dQ" type="4075">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ATLIZejaEeiGgsuPrl-7dQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:RoutingStyle" xmi:id="_ATLIYejaEeiGgsuPrl-7dQ" roundedBendpointsRadius="10" routing="Rectilinear"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_ATLIYujaEeiGgsuPrl-7dQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ATLIY-jaEeiGgsuPrl-7dQ" points="[-55, 12, 183, -158]$[-238, 12, 0, -158]$[-238, 145, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ATLIZujaEeiGgsuPrl-7dQ" id="(0.0,0.52)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_EavasejaEeiGgsuPrl-7dQ" type="3002" element="_EavasOjaEeiGgsuPrl-7dQ" source="_UX6l4Nz8EeKItrUHz40pEQ" target="_eXqkkFAFEemI77Q9dXX9Qw">
+      <children xmi:type="notation:DecorationNode" xmi:id="_EavatejaEeiGgsuPrl-7dQ" type="4075">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_EavatujaEeiGgsuPrl-7dQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:RoutingStyle" xmi:id="_EavasujaEeiGgsuPrl-7dQ" roundedBendpointsRadius="10" routing="Rectilinear"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Eavas-jaEeiGgsuPrl-7dQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EavatOjaEeiGgsuPrl-7dQ" points="[-55, 0, 319, -170]$[-374, 0, 0, -170]$[-374, 145, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Eavat-jaEeiGgsuPrl-7dQ" id="(0.045454545454545456,0.42)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_WZb0kPGQEeifuO8k3L_2oQ" type="3001" element="_WZamcPGQEeifuO8k3L_2oQ" source="_2-J5cPGPEeifuO8k3L_2oQ" target="_EVq48OwFEeiULJsV1RjNOw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_WZb0k_GQEeifuO8k3L_2oQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WZb0lPGQEeifuO8k3L_2oQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_WZb0kfGQEeifuO8k3L_2oQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WZb0kvGQEeifuO8k3L_2oQ" points="[0, 25, -143, -107]$[0, 65, -143, -67]$[143, 65, 0, -67]$[143, 107, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WZeQ0PGQEeifuO8k3L_2oQ" id="(0.4909090909090909,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WZeQ0fGQEeifuO8k3L_2oQ" id="(0.4636363636363636,0.1)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_Wr9H8PGQEeifuO8k3L_2oQ" type="3001" element="_Wr8g4PGQEeifuO8k3L_2oQ" source="_3i0FsPGPEeifuO8k3L_2oQ" target="_EVq48OwFEeiULJsV1RjNOw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Wr9vAPGQEeifuO8k3L_2oQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Wr9vAfGQEeifuO8k3L_2oQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Wr9H8fGQEeifuO8k3L_2oQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Wr9H8vGQEeifuO8k3L_2oQ" points="[0, 0, 162, -82]$[-177, 71, -15, -11]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WsALQPGQEeifuO8k3L_2oQ" id="(0.5,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WsAyUPGQEeifuO8k3L_2oQ" id="(0.32727272727272727,0.22)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_XKfeEPGQEeifuO8k3L_2oQ" type="3001" element="_XKe3APGQEeifuO8k3L_2oQ" source="_4KHWQPGPEeifuO8k3L_2oQ" target="_EVq48OwFEeiULJsV1RjNOw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_XKgFIPGQEeifuO8k3L_2oQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_XKgFIfGQEeifuO8k3L_2oQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_XKfeEfGQEeifuO8k3L_2oQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XKfeEvGQEeifuO8k3L_2oQ" points="[0, 25, 136, -107]$[0, 65, 136, -67]$[-136, 65, 0, -67]$[-136, 107, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XKjIcPGQEeifuO8k3L_2oQ" id="(0.509090909090909,1.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_cf-qMFAFEemI77Q9dXX9Qw" type="3001" element="_cf-DIFAFEemI77Q9dXX9Qw" source="_UXDbQFAFEemI77Q9dXX9Qw" target="_2-J5cPGPEeifuO8k3L_2oQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_cf_RQFAFEemI77Q9dXX9Qw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_cf_RQVAFEemI77Q9dXX9Qw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_cf-qMVAFEemI77Q9dXX9Qw" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cf-qMlAFEemI77Q9dXX9Qw" points="[1, 0, 0, -70]$[1, 70, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cgAfYFAFEemI77Q9dXX9Qw" id="(0.5545454545454546,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cgAfYVAFEemI77Q9dXX9Qw" id="(0.5636363636363636,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_uroiUVAFEemI77Q9dXX9Qw" type="3001" element="_uroiUFAFEemI77Q9dXX9Qw" source="_eXqkkFAFEemI77Q9dXX9Qw" target="_3i0FsPGPEeifuO8k3L_2oQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_urpJYFAFEemI77Q9dXX9Qw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_urpJYVAFEemI77Q9dXX9Qw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_uroiUlAFEemI77Q9dXX9Qw" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uroiU1AFEemI77Q9dXX9Qw" points="[3, 0, 4, -95]$[3, 70, 4, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_urpwcFAFEemI77Q9dXX9Qw" id="(0.509090909090909,1.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_veKygFAFEemI77Q9dXX9Qw" type="3001" element="_veKLcFAFEemI77Q9dXX9Qw" source="_fc2D8FAFEemI77Q9dXX9Qw" target="_4KHWQPGPEeifuO8k3L_2oQ" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_veKyg1AFEemI77Q9dXX9Qw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_veKyhFAFEemI77Q9dXX9Qw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_veKygVAFEemI77Q9dXX9Qw" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_veKyglAFEemI77Q9dXX9Qw" points="[3, 0, 0, -82]$[2, 70, -1, -12]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_veMAoFAFEemI77Q9dXX9Qw" id="(0.4636363636363636,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_veMAoVAFEemI77Q9dXX9Qw" id="(0.4909090909090909,0.24)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_fBLXkL7SEemr4rmPuG1vgQ" type="3001" element="_fBKwgL7SEemr4rmPuG1vgQ" source="_935XgL3qEemr4rmPuG1vgQ" target="_7LBlUMM_Eem3x40cDcgaYw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_fBLXk77SEemr4rmPuG1vgQ" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_fBLXlL7SEemr4rmPuG1vgQ" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_fBLXkb7SEemr4rmPuG1vgQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fBLXkr7SEemr4rmPuG1vgQ" points="[-1, 2, 72, -286]$[-75, 263, -2, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fBMlsL7SEemr4rmPuG1vgQ" id="(0.5,0.96)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_WKcd8MLkEem3x40cDcgaYw" type="3001" element="_WKb24MLkEem3x40cDcgaYw" source="_9MNWAK8fEeme-ea6aSDxww" target="_UxkmgcLkEem3x40cDcgaYw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_WKcd88LkEem3x40cDcgaYw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WKcd9MLkEem3x40cDcgaYw" x="38" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_WKcd8cLkEem3x40cDcgaYw" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WKcd8sLkEem3x40cDcgaYw" points="[0, 0, 81, -256]$[-90, 244, -9, -12]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WKdFAMLkEem3x40cDcgaYw" id="(0.37272727272727274,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WKdFAcLkEem3x40cDcgaYw" id="(0.41818181818181815,0.24)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_hGYnEMLkEem3x40cDcgaYw" type="3001" element="_hGXY8MLkEem3x40cDcgaYw" source="_EVq48OwFEeiULJsV1RjNOw" target="_UxkmgcLkEem3x40cDcgaYw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_hGYnE8LkEem3x40cDcgaYw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_hGYnFMLkEem3x40cDcgaYw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_hGYnEcLkEem3x40cDcgaYw" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hGYnEsLkEem3x40cDcgaYw" points="[57, -11, -369, 63]$[371, -75, -55, -1]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hGZ1MMLkEem3x40cDcgaYw" id="(0.4818181818181818,1.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_OTLYAcLqEem3x40cDcgaYw" type="3001" element="_OTLYAMLqEem3x40cDcgaYw" source="_UxkmgcLkEem3x40cDcgaYw" target="_-2yLYcAzEeivCP8b4PxhkA" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_OTL_EMLqEem3x40cDcgaYw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_OTL_EcLqEem3x40cDcgaYw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_OTLYAsLqEem3x40cDcgaYw" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OTLYA8LqEem3x40cDcgaYw" points="[0, 3, 3, -185]$[52, 184, 55, -4]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OTMmIMLqEem3x40cDcgaYw" id="(0.5272727272727272,0.94)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_8qEWMMM_Eem3x40cDcgaYw" type="3001" element="_8qDvIMM_Eem3x40cDcgaYw" source="_7LBlUMM_Eem3x40cDcgaYw" target="_9MNWAK8fEeme-ea6aSDxww" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_8qEWM8M_Eem3x40cDcgaYw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_8qEWNMM_Eem3x40cDcgaYw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_8qEWMcM_Eem3x40cDcgaYw" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8qEWMsM_Eem3x40cDcgaYw" points="[4, 0, 0, -55]$[5, 47, 1, -8]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8qFkUMM_Eem3x40cDcgaYw" id="(0.5,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8qFkUcM_Eem3x40cDcgaYw" id="(0.5363636363636364,0.16)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_l-YEkMNDEem3x40cDcgaYw" type="3001" element="_l-XdgMNDEem3x40cDcgaYw" source="_9MNWAK8fEeme-ea6aSDxww" target="_lYlP4MNDEem3x40cDcgaYw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_l-YEk8NDEem3x40cDcgaYw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_l-YElMNDEem3x40cDcgaYw" x="-8" y="-63"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_l-YEkcNDEem3x40cDcgaYw" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l-YEksNDEem3x40cDcgaYw" points="[18, 25, -150, -101]$[18, 59, -150, -67]$[168, 59, 0, -67]$[168, 101, 0, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l-Z5wMNDEem3x40cDcgaYw" id="(0.7,1.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_mNL8oMNDEem3x40cDcgaYw" type="3001" element="_mNLVkMNDEem3x40cDcgaYw" source="_lYlP4MNDEem3x40cDcgaYw" target="_UxkmgcLkEem3x40cDcgaYw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_mNL8o8NDEem3x40cDcgaYw" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mNL8pMNDEem3x40cDcgaYw" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_mNL8ocNDEem3x40cDcgaYw" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mNL8osNDEem3x40cDcgaYw" points="[0, 0, 209, -101]$[-264, 94, -55, -7]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mNNKwMNDEem3x40cDcgaYw" id="(0.4909090909090909,1.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_NxtrEHfTEeqFyphqKj_-KA" type="3001" element="_NxtEAHfTEeqFyphqKj_-KA" source="_9MNWAK8fEeme-ea6aSDxww" target="_EVq48OwFEeiULJsV1RjNOw" roundedBendpointsRadius="10" routing="Rectilinear" closestDistance="true" lineColor="16711680">
+      <children xmi:type="notation:DecorationNode" xmi:id="_NxtrE3fTEeqFyphqKj_-KA" type="4074">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_NxtrFHfTEeqFyphqKj_-KA" x="1" y="-14"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_NxtrEXfTEeqFyphqKj_-KA" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NxtrEnfTEeqFyphqKj_-KA" points="[0, 0, 70, -293]$[-64, 286, 6, -7]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NxuSIHfTEeqFyphqKj_-KA" id="(0.5181818181818182,1.0)"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>

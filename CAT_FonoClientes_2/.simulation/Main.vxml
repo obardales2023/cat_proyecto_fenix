@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vxml version="2.1" xml:lang="en-US"
+		xmlns="http://www.w3.org/2001/vxml"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:gvp="http://www.genesyslab.com/2006/vxml21-extension" application="../src/ComposerRoot.vxml">
+
+	
+	<!-- This is the Exit block -->
+	<form id="Exit2">
+		<block>
+			<log gvp:level="1">
+				<value expr="AppState.var_HdrLog + 'varAccion:' + AppState.varAccion + ' varDestino:' + AppState.varDestino + ' varServicio:' + AppState.varServicio + ' varPrioridad:' + AppState.varPrioridad + 'varRUT:' +  AppState.var_RUT + 'var_flujo_ivr: ' + AppState.var_flujo_ivr"/>
+			</log>
+    	</block>
+		<block>
+			<var name="ANI" expr="AppState.ANI"/>
+			<var name="var_datos_cliente_tipo_tarjeta" expr="AppState.var_datos_cliente_tipo_tarjeta"/>
+			<var name="var_flujo_ivr" expr="AppState.var_flujo_ivr"/>
+			<var name="var_RUT" expr="AppState.var_RUT"/>
+			<var name="var_transferir_guid" expr="AppState.var_transferir_guid"/>
+			<var name="var_transferir_idsesion" expr="AppState.var_transferir_idsesion"/>
+			<var name="var_transferir_rut" expr="AppState.var_transferir_rut"/>
+			<var name="var_transferir_token" expr="AppState.var_transferir_token"/>
+			<var name="varAccion" expr="AppState.varAccion"/>
+			<var name="varDestino" expr="AppState.varDestino"/>
+			<var name="varNombre" expr="AppState.varNombre"/>
+			<var name="varOpcion" expr="AppState.varOpcion"/>
+			<var name="varPrioridad" expr="AppState.varPrioridad"/>
+			<var name="varServicio" expr="AppState.varServicio"/>
+			<var name="var_local" expr="AppState.var_local"/>
+			<var name="var_retail" expr="AppState.var_retail"/>
+			<var name="var_local_retail_return" expr="AppState.var_local_retail_return"/>
+			<var name="var_connid" expr="AppState.var_connid"/>
+			<exit namelist="ANI var_datos_cliente_tipo_tarjeta var_flujo_ivr var_RUT var_transferir_guid var_transferir_idsesion var_transferir_rut var_transferir_token varAccion varDestino varNombre varOpcion varPrioridad varServicio var_local var_retail var_local_retail_return var_connid"/>
+  		</block>
+	</form>
+
+	<!-- Code for the rest of the blocks would be generated during callflow code generation mode-->
+</vxml>

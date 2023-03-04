@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="10" status="debug">
+	<Properties>
+		<Property name="log-path">/home/GenAdmin/log/GVP_Flujo/</Property> 
+		<Property name="log-name">GVP-Fonocliente</Property>   
+		<Property name="log-preservar">50</Property>
+	</Properties>
+	<Appenders>
+    <RollingFile name="FlatFileAppender" fileName="${log-path}${log-name}.log"
+      filePattern="${log-path}${log-name}_%d{MM-dd-yyyy}_%i.log">
+        <PatternLayout>
+            <Pattern>%d{yyyy-MM-dd} | %d{HH:mm:ss.SSS} | %-5p | %msg%n</Pattern>
+        </PatternLayout>
+        <Policies>
+            <TimeBasedTriggeringPolicy interval="1"/>
+        </Policies>
+        <DefaultRolloverStrategy max="${log-preservar}" />
+    </RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="gvp" level="debug" additivity="false">
+			<appender-ref ref="FlatFileAppender" level="debug"/>
+		</Logger>
+		<Root level="info" additivity="false">
+			<appender-ref ref="console"/>
+		</Root>
+	</Loggers>
+</Configuration>
